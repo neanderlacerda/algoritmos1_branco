@@ -57,7 +57,11 @@ while True:
                   print("4) Fazer logoff")
                   opcao = int(input("Digite o número da opção que deseja: "))
                   if(opcao == 1):
-                    print("(MOSTRAR CADASTRO DE AVALIAÇÕES)\n")
+                    print("Cadastro de avaliações\n")
+                    disciplina = str(input("Informe a disciplina:"))
+                    descricao = str(input("Descreva a avaliação:"))
+                    valor = float(input("Informe o valor da avaliação:"))
+                    dataAplicacao = str(input("Informe a data da avaliação:\n"))                                        
                   if(opcao == 2):
                     print("(MOSTRAR LANÇAMENTO DE NOTAS)\n")
                   if(opcao == 3):
