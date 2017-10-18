@@ -15,20 +15,16 @@ while True:
   print("2) Professor")
   print("3) Administrador")
   print("4) Sair")
-  perfil = int(input("\nDigite o número do perfil escolhido: "))
+  perfil = str(input("\nDigite o número do perfil escolhido: "))
 #____ALUNO_______________________________________________________
-  if(perfil == 1):
+  if(perfil == "1"):
     user  = str(input("Digite seu nome de usuário: "))
     senha = str(input("Digite sua senha: "))
-#_          *** Feedback para erros ***
-    if(len(alunos)==0):
-      print("Não existem alunos cadastrados no sistema")
     for i in alunos:
         if(user== i["Login"]):
             if(senha == i["Senha"]):
               print("\nBem-vindo %s!\nPerfil Aluno\n" %i["Nome"])
               print("Dados pessoais: ")
-              
               print("Nome completo: ",i["Nome"],i["Sobrenome"])
               print("Data de nascimento: ",i["Datanasc"])
               print("Email: ",i["Email"])
@@ -43,18 +39,10 @@ while True:
                   resposta = str(input("Tem certeza que deseja fazer logoff?""\n""Sim -> s""\n""Não -> n""\n"))
                 if(resposta == "s"):
                   break
-#          *** Feedback usuário ou senha incorretos ***
-            else:
-              print("Senha incorrta")
-        else:
-          print("Nome de usuário incorreto ou não existe")
 #____PROFESSOR____________________________________________________
-  if(perfil == 2):
+  if(perfil == "2"):
     user  = str(input("Digite seu nome de usuário: "))
     senha = str(input("Digite sua senha: "))
-#_          *** Feedback para erros ***
-    if(len(professores)==0):
-      print("Não existem professores cadastrados no sistema")
     for i in professores:
         if(user== i["Login"]):
             if(senha == i["Senha"]):
@@ -78,13 +66,8 @@ while True:
                     resposta = str(input("Tem certeza que deseja fazer logoff""\n""Sim -> s""\n""Não -> n""\n"))
                   if(resposta == "s"):
                     break
-#          *** Feedback usuário ou senha incorretos ***
-            else:
-              print("Senha incorrta")
-        else:
-          print("Nome de usuário incorreto ou não existe")
 #____ADMINISTRADOR__________________________________________________
-  if(perfil == 3):
+  if(perfil == "3"):
     user  = str(input("Digite seu nome de usuário: "))
     senha = str(input("Digite a senha de administrador: "))
     if(senha == "administrador"):
@@ -144,7 +127,7 @@ while True:
                 "Professor": professor,
                 "Alunos":listaAlunos}
                 turmas.append(turma)
-                print("Turma %s cadastrada com sucesso!"% turma["Nome"])
+                print("Turma %s cadastrada com sucesso!"% turma)
               else:
                 print("Professor não encontrado!")
                 
@@ -183,25 +166,13 @@ while True:
           print("LISTA DE ALUNOS\n")
           for i in alunos:
             print(i["Nome"])
-#_          *** Feedback para erros ***
-          if(len(alunos)==0):
-            print("Não existem alunos cadastrados no sistema")
 #_______________sair____________________________________________________                                                         
         if(opcao == 7):
           resposta = str(input("Tem certeza que deseja fazer logoff?""\n""Sim -> s""\n""Não -> n""\n"))
           if(resposta == "s"):
             break
-#          *** Feedback senha incorreta ***
-    else:
-      print("Senha incorreta")
-#___SAIR DO PROGRAMA____________________________________________________                                                       
-  if(perfil == 4):
+#___SAIR________________________________________________________________                                                       
+  if(perfil == "4"):
     resposta = str(input("Tem certeza que deseja sair?""\n""Sim -> s""\n""Não -> n""\n"))
     if(resposta == "s"):
       break
-#_          *** Feedback para erros ***
-  if(perfil > 4):
-    print("Opção inválida")
-  if(perfil < 1):
-    print("Opção inválida")
-
